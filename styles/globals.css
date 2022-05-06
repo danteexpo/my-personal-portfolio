@@ -1,0 +1,41 @@
+:root,
+:root.light {
+	--bg-color: #eaeaea;
+	--text-color: #191919;
+	color-scheme: light;
+}
+
+:root.dark {
+	--bg-color: #000;
+	--text-color: #eaeaea;
+	color-scheme: dark;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NAVBAR PHONE SCREEN */
+.text-transparent {
+	-webkit-text-stroke: 1px #191919;
+}
