@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
 import Head from "next/head";
+import { useState, useEffect } from "react";
 import { Navbar } from "../components/Navbar";
 import { NavbarPage } from "../components/NavbarPage";
+import { Presentation } from "../components/Presentation";
 
 export default function Home() {
 	const [isDarkMode, setIsDarkMode] = useState(false);
@@ -20,7 +21,7 @@ export default function Home() {
 	}, [isDarkMode]);
 
 	return (
-		<div className={`${isDarkMode ? "dark" : ""}`}>
+		<div className={`${isDarkMode ? "dark" : ""} min-w-[320px]`}>
 			<Head>
 				<title>Dante Expósito | Portfolio</title>
 				<meta
@@ -29,7 +30,10 @@ export default function Home() {
 				/>
 				<link rel="icon" href="/favicon.svg" />
 			</Head>
-			{!isClosed && <NavbarPage handleClose={handleClose} />}
+			{/* MOBILE NAVBAR CONDITIONAL */}
+			{!isClosed && (
+				<NavbarPage isDarkMode={isDarkMode} handleClose={handleClose} />
+			)}
 			{isClosed && (
 				<div>
 					<Navbar
@@ -37,50 +41,10 @@ export default function Home() {
 						handleMode={handleMode}
 						handleClose={handleClose}
 					/>
-					<div>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-						<h2>fjdskla</h2>
-					</div>
+					<Presentation isDarkMode={isDarkMode} />
 				</div>
 			)}
+			Redux, preguntas y codewars
 		</div>
 	);
 }

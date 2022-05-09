@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root,
 :root.light {
 	--bg-color: #eaeaea;
@@ -11,10 +13,11 @@
 	color-scheme: dark;
 }
 
-html,
-body {
+* {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
 }
 
 body {
@@ -22,20 +25,16 @@ body {
 	color: var(--text-color);
 }
 
-a {
-	color: inherit;
-	text-decoration: none;
-}
-
-* {
-	box-sizing: border-box;
-}
-
+/* TAILWIND INIT */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* NAVBAR PHONE SCREEN */
-.text-transparent {
-	-webkit-text-stroke: 1px #191919;
+.text-transparent-light {
+	-webkit-text-stroke: 1.2px #191919;
+}
+
+.text-transparent-dark {
+	-webkit-text-stroke: 0.4px #eaeaea;
 }

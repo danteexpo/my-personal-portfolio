@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import burgerIcon from "../public/burger.svg";
-import burgerIcon2 from "../public/burger-2.svg";
-import moonIcon from "../public/moon.svg";
+// Images
+import burgerIcon from "../public/Navbar/burger.svg";
+import burgerIcon2 from "../public/Navbar/burger-2.svg";
+import moonIcon from "../public/Navbar/moon.svg";
+import sunIcon from "../public/Navbar/sun.svg";
 
 export const Navbar = ({ isDarkMode, handleMode, handleClose }) => {
 	return (
@@ -27,10 +29,11 @@ export const Navbar = ({ isDarkMode, handleMode, handleClose }) => {
 					<p className="cursor-pointer">Contact</p>
 				</span>
 				<span
-					className="grid place-items-center relative w-8 h-8 cursor-pointer sm:w-10 sm:h-10"
+					className="grid place-items-center relative w-8 h-8 rounded-full cursor-pointer sm:w-10 sm:h-10 hover:ring-2 hover:ring-gray-light dark:hover:ring-gray-dark"
 					onClick={handleMode}
 				>
-					<Image src={moonIcon} alt="" layout="fill" priority />
+					{isDarkMode && <Image src={sunIcon} alt="" layout="fill" />}
+					{!isDarkMode && <Image src={moonIcon} alt="" layout="fill" />}
 				</span>
 			</nav>
 		</>
