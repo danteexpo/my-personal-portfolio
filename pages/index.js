@@ -1,27 +1,41 @@
+// React & Next
 import Head from "next/head";
 import { useState, useEffect } from "react";
+// Components
+import { Break } from "../components/Break";
 import { Navbar } from "../components/Navbar";
 import { NavbarPage } from "../components/NavbarPage";
 import { Presentation } from "../components/Presentation";
+import { Projects } from "../components/Projects";
+import { Contact } from "../components/Contact";
+import { useMode } from "../hooks/useMode";
+import { BackTop } from "../components/BackTop";
+// React Spring
+import { animated, useSpring } from "@react-spring/web";
 
 export default function Home() {
-	const [isDarkMode, setIsDarkMode] = useState(false);
 	const [isClosed, setIsClosed] = useState(true);
+	const { mode } = useMode();
 
-	const handleMode = () => {
-		setIsDarkMode(prevState => (prevState ? false : true));
-	};
+	// React Spring
+	const props = useSpring({
+		to: { opacity: 1 },
+		from: { opacity: 0 },
+	});
 
 	const handleClose = () => {
 		setIsClosed(prevState => (prevState ? false : true));
 	};
 
 	useEffect(() => {
-		document.documentElement.className = isDarkMode ? "dark" : "light";
-	}, [isDarkMode]);
+		document.documentElement.className = mode === "light" ? "light" : "dark";
+	}, [mode]);
 
 	return (
-		<div className={`${isDarkMode ? "dark" : ""} min-w-[320px]`}>
+		<animated.div
+			className={`${mode === "dark" ? "dark" : ""} relative min-w-[280px]`}
+			style={props}
+		>
 			<Head>
 				<title>Dante Expósito | Portfolio</title>
 				<meta
@@ -30,21 +44,24 @@ export default function Home() {
 				/>
 				<link rel="icon" href="/favicon.svg" />
 			</Head>
-			{/* MOBILE NAVBAR CONDITIONAL */}
-			{!isClosed && (
-				<NavbarPage isDarkMode={isDarkMode} handleClose={handleClose} />
-			)}
+			{!isClosed && <NavbarPage handleClose={handleClose} />}
 			{isClosed && (
-				<div>
-					<Navbar
-						isDarkMode={isDarkMode}
-						handleMode={handleMode}
-						handleClose={handleClose}
-					/>
-					<Presentation isDarkMode={isDarkMode} />
-				</div>
+				<>
+					<Navbar handleClose={handleClose} />
+					<BackTop />
+					<Presentation />
+					<Projects />
+					<Break />
+					<Contact />
+				</>
 			)}
-			Redux, preguntas y codewars
-		</div>
+			{/* 
+			<p>
+				subir a netlify, probar en celular y mandarselo a nacho y que pruebe tmb el resume
+				y desde distintos celulares
+			</p>
+			<p>Redux, preguntas, codewars, proyectos goncy pozzo, playlist ssr</p> 
+			*/}
+		</animated.div>
 	);
 }

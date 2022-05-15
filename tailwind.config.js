@@ -13,6 +13,8 @@ module.exports = {
 				"true-black": "#000",
 				"gray-light": "#808080",
 				"gray-dark": "#AFAFAF",
+				"linkedin-blue": "#0A66C2",
+				"resume-red": "#B93556",
 			},
 		},
 	},
