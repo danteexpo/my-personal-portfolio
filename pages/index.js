@@ -55,13 +55,6 @@ export default function Home() {
 					<Contact />
 				</>
 			)}
-			{/* 
-			<p>
-				subir a netlify, probar en celular y mandarselo a nacho y que pruebe tmb el resume
-				y desde distintos celulares
-			</p>
-			<p>Redux, preguntas, codewars, proyectos goncy pozzo, playlist ssr</p> 
-			*/}
 		</animated.div>
 	);
 }
