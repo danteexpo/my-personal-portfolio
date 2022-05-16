@@ -92,7 +92,7 @@ const linkSquares = [
 		src: ResumeLink,
 		name: "Resume",
 		bg: "bg-resume-red",
-		link: "https://drive.google.com/file/d/1wsgf8Qe0_vej2PBLBX_C1BIxEp1xHAWK/view?usp=sharing",
+		link: "https://drive.google.com/file/d/17RLb0ywyYxNa60JIKg_gYTK7_-JU6uEs/view?usp=sharing",
 	},
 ];
 
