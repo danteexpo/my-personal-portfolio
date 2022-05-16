@@ -29,7 +29,7 @@ import SassTech from "../public/Presentation/BlobTechs/Sass.svg";
 import BootstrapTech from "../public/Presentation/BlobTechs/Bootstrap.svg";
 import TailwindTech from "../public/Presentation/BlobTechs/TailwindCSS.svg";
 import ReactTech from "../public/Presentation/BlobTechs/React.svg";
-import JavaScriptTech from "../public/Presentation/BlobTechs/JavaScript.svg";
+import JavaScriptTech from "../public/Presentation/BlobTechs/Javascript.svg";
 import ReduxTech from "../public/Presentation/BlobTechs/Redux.svg";
 import NextTech from "../public/Presentation/BlobTechs/Next.svg";
 import FigmaTech from "../public/Presentation/BlobTechs/Figma.svg";
