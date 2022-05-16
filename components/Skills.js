@@ -156,9 +156,9 @@ export const Skills = () => {
 							</span>
 						))}
 					</div>
-					<h1 className="font-bold text-2xl sm:hidden">
+					<h2 className="font-bold text-2xl sm:hidden">
 						I&apos;m Dante Expósito
-					</h1>
+					</h2>
 					<p className="font-light text-sm w-56 mx-auto sm:hidden">
 						A self-taught front-end web developer, who loves to design and build
 						web applications.
