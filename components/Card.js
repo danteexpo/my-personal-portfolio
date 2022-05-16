@@ -11,10 +11,10 @@ export const Card = ({ card, handleChoice, flipped, disabled }) => {
 	return (
 		<div className="game-card">
 			<div className={flipped ? "flipped" : ""}>
-				<img src={card.src} alt="" className="front" />
+				<img src={card.src} alt="Card front" className="front" />
 				<img
 					src={"https://i.imgur.com/lfQDpfO.png"}
-					alt=""
+					alt="Card back"
 					onClick={handleClick}
 					className="back"
 				/>

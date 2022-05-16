@@ -53,7 +53,7 @@ export const Contact = () => {
 							onClick={handleStyle}
 							className="cursor-pointer opacity-80 hover:opacity-100"
 						>
-							<Image src={contactGift} alt="" width={32} height={32} />
+							<Image src={contactGift} alt="Gift" width={32} height={32} />
 						</span>
 					</div>
 

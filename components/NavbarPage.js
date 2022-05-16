@@ -25,10 +25,10 @@ export const NavbarPage = ({ handleClose }) => {
 				onClick={handleClose}
 			>
 				{mode === "light" && (
-					<Image src={closeIcon} alt="" width={22} height={22} />
+					<Image src={closeIcon} alt="See page" width={22} height={22} />
 				)}
 				{mode === "dark" && (
-					<Image src={closeIcon2} alt="" width={22} height={22} />
+					<Image src={closeIcon2} alt="See page" width={22} height={22} />
 				)}
 			</span>
 			<ul

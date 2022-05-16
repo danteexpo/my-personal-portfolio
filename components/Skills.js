@@ -213,7 +213,7 @@ export const Skills = () => {
 											data-tooltip={tech.name}
 											className={`grid place-items-center relative w-10 h-10 cursor-pointer sm:w-12 sm:h-12 sm:opacity-80 sm:hover:opacity-100 tooltipClass`}
 										>
-											<Image src={tech.src} alt="" layout="fill" />
+											<Image src={tech.src} alt={tech.name} layout="fill" />
 										</span>
 									</a>
 								))}
@@ -237,7 +237,7 @@ export const Skills = () => {
 										className={`flex flex-col justify-between items-center py-1 ${square.bg} w-20 h-20 cursor-pointer square-box`}
 									>
 										<span className="grid place-items-center relative top-0 w-12 h-12">
-											<Image src={square.src} alt="" layout="fill" />
+											<Image src={square.src} alt={square.name} layout="fill" />
 										</span>
 										<p className="text-sm font-light">{square.name}</p>
 									</a>

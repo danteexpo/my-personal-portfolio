@@ -153,7 +153,7 @@ export const Projects = () => {
 								target="_blank"
 								rel="noreferrer"
 							>
-								<Image src={project.imgSrc} alt="" layout="fill" />
+								<Image src={project.imgSrc} alt={project.title} layout="fill" />
 							</a>
 							{project.id >= 100 ? (
 								""
@@ -164,7 +164,7 @@ export const Projects = () => {
 									rel="noreferrer"
 									className="relative w-10 h-10 cursor-pointer rounded-full sm:opacity-80 sm:hover:opacity-100"
 								>
-									<Image src={GitHub} alt="" layout="fill" />
+									<Image src={GitHub} alt="Github link" layout="fill" />
 								</a>
 							)}
 						</div>

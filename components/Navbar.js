@@ -31,10 +31,10 @@ export const Navbar = ({ handleClose }) => {
 					onClick={handleClose}
 				>
 					{mode === "light" && (
-						<Image src={burgerIcon} alt="" width={22} height={20} />
+						<Image src={burgerIcon} alt="See links" width={22} height={20} />
 					)}
 					{mode === "dark" && (
-						<Image src={burgerIcon2} alt="" width={22} height={20} />
+						<Image src={burgerIcon2} alt="See links" width={22} height={20} />
 					)}
 				</span>
 				<span className="hidden sm:flex justify-center items-center gap-4 font-medium">
@@ -50,8 +50,12 @@ export const Navbar = ({ handleClose }) => {
 					className="grid place-items-center relative w-8 h-8 rounded-full cursor-pointer sm:w-10 sm:h-10 hover:ring-2 hover:ring-gray-light dark:hover:ring-gray-dark"
 					onClick={() => changeMode(mode === "light" ? "dark" : "light")}
 				>
-					{mode === "light" && <Image src={moonIcon} alt="" layout="fill" />}
-					{mode === "dark" && <Image src={sunIcon} alt="" layout="fill" />}
+					{mode === "light" && (
+						<Image src={moonIcon} alt="Dark mode" layout="fill" />
+					)}
+					{mode === "dark" && (
+						<Image src={sunIcon} alt="Light mode" layout="fill" />
+					)}
 				</span>
 			</nav>
 		</>
