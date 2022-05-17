@@ -22,10 +22,7 @@ export const Navbar = ({ handleClose }) => {
 
 	return (
 		<>
-			<nav
-				id="navbar"
-				className="flex justify-between items-center m-4 max-w-3xl md:mx-auto"
-			>
+			<nav className="flex justify-between items-center m-4 max-w-3xl md:mx-auto">
 				<span
 					className="grid place-items-center cursor-pointer sm:hidden"
 					onClick={handleClose}

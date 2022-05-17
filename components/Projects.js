@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 // Hooks
 import { useMode } from "../hooks/useMode";
@@ -183,12 +184,22 @@ export const Projects = () => {
 			</section>
 			<div className="sm:hidden" onClick={handleMore}>
 				{showAll && (
-					<p className="text-[#0000EE] opacity-80 hover:opacity-100 cursor-pointer">
-						See Less...
-					</p>
+					<Link href="#projects">
+						<p
+							className={`${
+								mode === "light" ? "text-[#0000EE]" : "text-[#ffffff]"
+							} opacity-80 hover:opacity-100 cursor-pointer`}
+						>
+							See Less...
+						</p>
+					</Link>
 				)}
 				{!showAll && (
-					<p className="text-[#0000EE] opacity-80 hover:opacity-100 cursor-pointer">
+					<p
+						className={`${
+							mode === "light" ? "text-[#0000EE]" : "text-[#ffffff]"
+						} opacity-80 hover:opacity-100 cursor-pointer`}
+					>
 						See More...
 					</p>
 				)}

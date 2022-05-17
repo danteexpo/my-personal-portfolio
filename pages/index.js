@@ -32,10 +32,7 @@ export default function Home() {
 	}, [mode]);
 
 	return (
-		<animated.div
-			className={`${mode === "dark" ? "dark" : ""} relative min-w-[280px]`}
-			style={props}
-		>
+		<div className={`${mode === "dark" ? "dark" : ""} relative min-w-[280px]`}>
 			<Head>
 				<title>Dante Expósito | Portfolio</title>
 				<meta
@@ -47,14 +44,26 @@ export default function Home() {
 			{!isClosed && <NavbarPage handleClose={handleClose} />}
 			{isClosed && (
 				<>
-					<Navbar handleClose={handleClose} />
-					<BackTop />
-					<Presentation />
-					<Projects />
-					<Break />
-					<Contact />
+					<animated.div style={props}>
+						<Navbar handleClose={handleClose} />
+					</animated.div>
+					<animated.div style={props}>
+						<BackTop />
+					</animated.div>
+					<animated.div style={props}>
+						<Presentation />
+					</animated.div>
+					<animated.div style={props}>
+						<Projects />
+					</animated.div>
+					<animated.div style={props}>
+						<Break />
+					</animated.div>
+					<animated.div style={props}>
+						<Contact />
+					</animated.div>
 				</>
 			)}
-		</animated.div>
+		</div>
 	);
 }
