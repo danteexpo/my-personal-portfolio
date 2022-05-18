@@ -26,7 +26,7 @@ import desktopTopDarkLayeredWaves from "../public/Presentation/Waves/desktop-top
 import desktopBottomDarkLayeredWaves from "../public/Presentation/Waves/desktop-bottom-dark-layered-waves.svg";
 // Blob Techs
 import SassTech from "../public/Presentation/BlobTechs/Sass.svg";
-import BootstrapTech from "../public/Presentation/BlobTechs/Bootstrap.svg";
+import FirebaseTech from "../public/Presentation/BlobTechs/Firebase.svg";
 import TailwindTech from "../public/Presentation/BlobTechs/TailwindCSS.svg";
 import ReactTech from "../public/Presentation/BlobTechs/React.svg";
 import JavaScriptTech from "../public/Presentation/BlobTechs/Javascript.svg";
@@ -47,12 +47,7 @@ const icons = [
 
 const techs = [
 	{ id: 0, src: SassTech, name: "Sass", link: "https://sass-lang.com/" },
-	{
-		id: 1,
-		src: BootstrapTech,
-		name: "Boostrap",
-		link: "https://getbootstrap.com/",
-	},
+	{ id: 1, src: FigmaTech, name: "Figma", link: "https://www.figma.com/" },
 	{
 		id: 2,
 		src: TailwindTech,
@@ -67,8 +62,13 @@ const techs = [
 		link: "https://www.javascript.com/",
 	},
 	{ id: 5, src: ReduxTech, name: "Redux", link: "https://redux.js.org/" },
-	{ id: 6, src: NextTech, name: "Next.js", link: "https://nextjs.org/" },
-	{ id: 7, src: FigmaTech, name: "Figma", link: "https://www.figma.com/" },
+	{
+		id: 6,
+		src: FirebaseTech,
+		name: "Firebase",
+		link: "https://firebase.google.com/",
+	},
+	{ id: 7, src: NextTech, name: "Next.js", link: "https://nextjs.org/" },
 	{ id: 8, src: GitTech, name: "Git", link: "https://git-scm.com/" },
 ];
 
@@ -92,7 +92,7 @@ const linkSquares = [
 		src: ResumeLink,
 		name: "Resume",
 		bg: "bg-resume-red",
-		link: "https://drive.google.com/file/d/1taSI2I2FheKriIZd24thGPJKp5x5IuNS/view?usp=sharing",
+		link: "https://drive.google.com/file/d/14GfIfZDolxiEfDHIMQwvN27-RIDkQ6r3/view?usp=sharing",
 	},
 ];
 
