@@ -1,6 +1,7 @@
+// React & Next
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
 // Hooks
 import { useMode } from "../hooks/useMode";
 // Images
@@ -40,16 +41,8 @@ const projects = [
 		imgSrc: NetflixProject,
 		techs: ["nextjs", "tailwind-CSS", "swiper"],
 	},
-	// {
-	// 	id: 2,
-	// 	title: "Frontend Mentor Countries",
-	// 	link: "#",
-	// 	github: "#",
-	// 	imgSrc: GitHub,
-	// 	techs: ["react", "tailwind-CSS", "redux"],
-	// },
 	{
-		id: 3,
+		id: 2,
 		title: "Rick & Morty Wiki",
 		link: "https://de-rick-and-morty-wiki.netlify.app/",
 		github: "https://github.com/danteexpo/rick-morty-wiki",
@@ -57,7 +50,7 @@ const projects = [
 		techs: ["react", "rick&morty-api", "sass", "bootstrap"],
 	},
 	{
-		id: 4,
+		id: 3,
 		title: "TeamWork",
 		link: "https://de-teamwork.netlify.app/",
 		github: "https://github.com/danteexpo/teamwork",
@@ -65,7 +58,7 @@ const projects = [
 		techs: ["react", "firebase"],
 	},
 	{
-		id: 5,
+		id: 4,
 		title: "My Recipes",
 		link: "https://de-recipes.netlify.app/",
 		github: "https://github.com/danteexpo/my-recipes",
@@ -73,7 +66,7 @@ const projects = [
 		techs: ["react", "tailwind-css", "firebase"],
 	},
 	{
-		id: 6,
+		id: 5,
 		title: "Magic Match",
 		link: "https://de-magic-match.netlify.app/",
 		github: "https://github.com/danteexpo/magic-match",
@@ -81,7 +74,7 @@ const projects = [
 		techs: ["react"],
 	},
 	{
-		id: 7,
+		id: 6,
 		title: "Expense Tracker",
 		link: "https://de-my-tracker.netlify.app",
 		github: "https://github.com/danteexpo/expensetracker-auth",
@@ -89,7 +82,7 @@ const projects = [
 		techs: ["react", "firebase"],
 	},
 	{
-		id: 8,
+		id: 7,
 		title: "Crypto World",
 		link: "https://de-crypto-world.netlify.app",
 		github: "https://github.com/danteexpo/crypto-app",

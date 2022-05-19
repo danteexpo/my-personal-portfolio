@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+// Context
 import { ModeProvider } from "../context/ModeContext";
 
 function MyApp({ Component, pageProps }) {

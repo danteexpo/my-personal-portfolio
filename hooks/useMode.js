@@ -1,4 +1,5 @@
 import { useContext } from "react";
+// Context
 import { ModeContext } from "../context/ModeContext";
 
 export const useMode = () => {

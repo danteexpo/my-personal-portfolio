@@ -1,5 +1,7 @@
-import Image from "next/image";
+// React & Next
 import React from "react";
+import Image from "next/image";
+// Images
 import backTop from "../public/back-top.svg";
 
 export const BackTop = () => {

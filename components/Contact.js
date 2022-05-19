@@ -1,5 +1,6 @@
-import Image from "next/image";
+// React & Next
 import React, { useState } from "react";
+import Image from "next/image";
 // Formspree
 import { useForm, ValidationError } from "@formspree/react";
 // Components
@@ -20,7 +21,6 @@ export const Contact = () => {
 		setIsActive(prevState => (prevState ? false : true));
 	};
 
-	// top-24 transition-all duration-1000
 	return (
 		<section id="contact" className="relative mt-12 max-w-3xl mx-auto">
 			<h2
