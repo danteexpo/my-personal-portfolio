@@ -56,11 +56,11 @@ export const Break = () => {
 					</span>
 				</>
 			)}
-			<div id="break" className="relative -top-1 bg-main-black py-4">
+			<div id="break" className="relative -top-1 bg-main-black py-8">
 				<div className="max-w-3xl mx-auto flex flex-col items-center gap-1 justify-center md:flex-row md:justify-between">
 					<h2
 						data-title="Little Break"
-						className="relative text-center font-bold text-2xl text-transparent text-transparent-dark before:content-[attr(data-title)] before:absolute before:bottom-[3px] before:text-main-white sm:text-4xl"
+						className="relative text-center font-bold text-2xl text-transparent text-transparent-dark before:content-[attr(data-title)] before:absolute before:bottom-[3px] before:text-main-white sm:text-3xl md:text-4xl"
 					>
 						Little Break
 					</h2>

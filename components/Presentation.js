@@ -7,62 +7,85 @@ import { Skills } from "./Skills";
 import { useMode } from "../hooks/useMode";
 // Images
 import myPicture from "../public/Presentation/picture.svg";
-// Techs
-import JavaScriptIcon from "../public/Presentation/Techs/JavaScript.svg";
-import JavaScriptBlackIcon from "../public/Presentation/Techs/JavaScript-black.svg";
-import ReactIcon from "../public/Presentation/Techs/React.svg";
-import ReactBlackIcon from "../public/Presentation/Techs/React-black.svg";
-import ReduxIcon from "../public/Presentation/Techs/Redux.svg";
-import ReduxBlackIcon from "../public/Presentation/Techs/Redux-black.svg";
+// Icons
+import GithubIconLight from "../public/Presentation/Icons/Github-light.svg";
+import GithubIconDark from "../public/Presentation/Icons/Github-dark.svg";
+import LinkedinIcon from "../public/Presentation/Icons/Linkedin-icon.svg";
+import ResumeIcon from "../public/Presentation/Icons/Resume-icon.svg";
+// Framer Motion
+import { motion } from "framer-motion";
+
+const icons = [
+  {
+    id: 0,
+    name: "LinkedIn",
+    src: LinkedinIcon,
+    altSrc: LinkedinIcon,
+    link: "https://www.linkedin.com/in/danteexposito/"
+  },
+  {
+    id: 1,
+    name: "GitHub",
+    src: GithubIconLight,
+    altSrc: GithubIconDark,
+    link: "https://github.com/danteexpo"
+  },
+  {
+    id: 2,
+    name: "Resume/CV",
+    src: ResumeIcon,
+    altSrc: ResumeIcon,
+    link: "https://drive.google.com/file/d/1inD9qtkd1Awv4FsXX7YA8vb2lqUBBHnX/view?usp=sharing"
+  }
+];
 
 export const Presentation = () => {
-	const { mode } = useMode();
+  const { mode } = useMode();
 
-	return (
-		<main id="home" className="mt-20">
-			<section className="sm:flex sm:px-4 sm:justify-between sm:w-full max-w-3xl md:px-0 md:mx-auto">
-				<div className="hidden sm:flex sm:flex-col">
-					<div className="pt-4 pb-2 w-32 flex justify-between items-center">
-						<span className="grid place-items-center relative w-8 h-8">
-							{mode === "light" && (
-								<Image src={JavaScriptBlackIcon} alt="" layout="fill" />
-							)}
-							{mode === "dark" && (
-								<Image src={JavaScriptIcon} alt="" layout="fill" />
-							)}
-						</span>
-						<span className="grid place-items-center relative w-8 h-8">
-							{mode === "light" && (
-								<Image src={ReactBlackIcon} alt="" layout="fill" />
-							)}
-							{mode === "dark" && (
-								<Image src={ReactIcon} alt="" layout="fill" />
-							)}
-						</span>
-						<span className="grid place-items-center relative w-8 h-8">
-							{mode === "light" && (
-								<Image src={ReduxBlackIcon} alt="" layout="fill" />
-							)}
-							{mode === "dark" && (
-								<Image src={ReduxIcon} alt="" layout="fill" />
-							)}
-						</span>
-					</div>
-					<h1 className="font-bold text-3xl lg:text-4xl">
-						I&apos;m Dante Expósito
-					</h1>
-					<p className="font-light text-lg w-72 lg:text-xl lg:w-80">
-						A self-taught front-end web developer, who loves to design and build
-						web applications.
-					</p>
-				</div>
+  return (
+    <main id="home" className="mt-20">
+      <section className="sm:flex sm:px-4 sm:items-center sm:justify-between sm:w-full max-w-3xl md:px-0 md:mx-auto">
+        <div className="hidden sm:flex sm:flex-col">
+          <h1 className="font-bold text-3xl lg:text-4xl">
+            I&apos;m Dante Expósito
+          </h1>
+          <p className="pt-3 pb-6 font-light text-lg w-72 lg:text-xl lg:w-80">
+            A self-taught front-end web developer, who loves to design and build
+            web applications.
+          </p>
+          <div className="w-32 flex justify-between items-center">
+            {icons.map(icon => (
+              <motion.a
+                key={icon.id}
+                href={icon.link}
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{
+                  scale: 1.2,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <span
+                  data-tooltip={icon.name}
+                  className="grid place-items-center relative w-8 h-8 tooltipClass"
+                >
+                  <Image
+                    src={mode === "light" ? icon.src : icon.altSrc}
+                    alt=""
+                    layout="fill"
+                  />
+                </span>
+              </motion.a>
+            ))}
+          </div>
+        </div>
 
-				<span className="mx-auto grid place-items-center relative w-56 h-56 sm:mx-0">
-					<Image src={myPicture} alt="" layout="fill" />
-				</span>
-			</section>
+        <span className="mx-auto grid place-items-center relative w-56 h-56 sm:mx-0">
+          <Image src={myPicture} alt="" layout="fill" />
+        </span>
+      </section>
 
-			<Skills />
-		</main>
-	);
+      <Skills />
+    </main>
+  );
 };

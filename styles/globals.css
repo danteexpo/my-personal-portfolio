@@ -1,27 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root,
 :root.light {
-	--bg-color: #eaeaea;
-	--text-color: #191919;
-	color-scheme: light;
+  --bg-color: #eaeaea;
+  --text-color: #191919;
+  color-scheme: light;
 }
 :root.dark {
-	--bg-color: #000000;
-	--text-color: #eaeaea;
-	color-scheme: dark;
+  --bg-color: #000000;
+  --text-color: #eaeaea;
+  color-scheme: dark;
 }
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	font-family: "Inter", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 body {
-	background-color: var(--bg-color);
-	color: var(--text-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* TAILWIND INIT */
@@ -31,149 +31,188 @@ body {
 
 /* NAVBAR PHONE SCREEN */
 .text-transparent-light {
-	-webkit-text-stroke: 1.2px #191919;
+  -webkit-text-stroke: 1.2px #191919;
 }
 .text-form-transparent-light {
-	-webkit-text-stroke: 2.4px #191919;
+  -webkit-text-stroke: 2.4px #191919;
 }
 .text-transparent-dark {
-	-webkit-text-stroke: 0.4px #eaeaea;
+  -webkit-text-stroke: 0.4px #eaeaea;
 }
 .text-form-transparent-dark {
-	-webkit-text-stroke: 0.8px #eaeaea;
+  -webkit-text-stroke: 0.8px #eaeaea;
 }
 
 /* SQUARE LINKS */
 .square-box {
-	position: relative;
-	transform-style: preserve-3d;
+  position: relative;
+  transform-style: preserve-3d;
 }
 
 /* PROJECT CARDS */
 .card-list::-webkit-scrollbar {
-	width: 10px;
-	height: 10px;
+  width: 10px;
+  height: 10px;
 }
 /* LIGHTMODE */
 .card-list-light::-webkit-scrollbar-thumb {
-	background: #808080;
-	border-radius: 10px;
+  background: #808080;
+  border-radius: 10px;
 }
 .card-list-light::-webkit-scrollbar-track {
-	background: #bbbbbb;
-	border-radius: 10px;
+  background: #bbbbbb;
+  border-radius: 10px;
 }
 /* DARKMODE */
 .card-list-dark::-webkit-scrollbar-thumb {
-	background: #808080;
-	border-radius: 10px;
+  background: #808080;
+  border-radius: 10px;
 }
 .card-list-dark::-webkit-scrollbar-track {
-	background: #191919;
-	border-radius: 10px;
+  background: #191919;
+  border-radius: 10px;
 }
 @media (min-width: 640px) {
-	.card {
-		box-shadow: -0.75rem 0 0.75rem rgba(0, 0, 0, 0.75);
-	}
-	.card:focus-within ~ .card,
-	.card:hover ~ .card {
-		transform: translateX(130px);
-	}
-	.card:hover {
-		transform: translateY(-1rem);
-	}
-	.card:not(:first-child) {
-		margin-left: -130px;
-	}
+  .card {
+    box-shadow: -0.75rem 0 0.75rem rgba(0, 0, 0, 0.75);
+  }
+  .card:focus-within ~ .card,
+  .card:hover ~ .card {
+    transform: translateX(130px);
+  }
+  .card:hover {
+    transform: translateY(-1rem);
+  }
+  .card:not(:first-child) {
+    margin-left: -130px;
+  }
 }
 .card-header a:hover,
 .card-header h2:hover {
-	/* background: linear-gradient(90deg, #ff8a00, #e52e71); */
-	background: #fff;
-	text-shadow: none;
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-	background-clip: text;
+  background: #fff;
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 .tags p:hover {
-	/* background: linear-gradient(90deg, #ff8a00, #e52e71); */
-	background: #fff;
-	text-shadow: none;
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-	-webkit-box-decoration-break: clone;
-	background-clip: text;
+  background: #fff;
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-box-decoration-break: clone;
+  background-clip: text;
 }
 
 /* TOOLTIP SKILLS */
-@media (min-width: 768px) {
-	.tooltipClass::before {
-		position: absolute;
-		z-index: 2;
-		display: none;
-		width: min-content;
-		padding: 10px;
-		font-size: 1rem;
-		background-color: #808080;
-		border-radius: 4px;
-		color: #fff;
-		content: attr(data-tooltip);
-		font-size: 0.9375rem;
-		font-weight: 300;
-		line-height: 1;
-		/* Right */
-		top: 50%;
-		left: calc(100% + 5px);
-		transform: translateY(-50%);
-	}
-	.tooltipClass::after {
-		position: absolute;
-		z-index: 1;
-		display: none;
-		width: 0;
-		height: 0;
-		border: 5px solid transparent;
-		content: "";
-		/* Right */
-		top: 50%;
-		left: 100%;
-		border-right-color: #808080;
-		border-left-width: 0;
-		transform: translateY(-50%);
-	}
-	.tooltipClass:hover::before,
-	.tooltipClass:hover::after {
-		display: inline-block;
-	}
+@media (min-width: 868px) {
+  /* BOTTOM TOOLTIP */
+  .tooltipClass::before {
+    position: absolute;
+    z-index: 2;
+    display: none;
+    width: min-content;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #808080;
+    border-radius: 4px;
+    color: #fff;
+    content: attr(data-tooltip);
+    font-size: 0.9375rem;
+    font-weight: 300;
+    line-height: 1;
+    /* Bottom */
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .tooltipClass::after {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    content: "";
+    /* Bottom */
+    top: 100%;
+    left: 50%;
+    border-bottom-color: #808080;
+    border-top-width: 0;
+    transform: translateX(-50%);
+  }
+  .tooltipClass:hover::before,
+  .tooltipClass:hover::after {
+    display: inline-block;
+  }
+
+  /* TOP TOOLTIP */
+  .tooltipClass1::before {
+    position: absolute;
+    z-index: 2;
+    display: none;
+    width: min-content;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #808080;
+    border-radius: 4px;
+    color: #fff;
+    content: attr(data-tooltip);
+    font-size: 0.9375rem;
+    font-weight: 300;
+    line-height: 1;
+    /* Top */
+    bottom: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .tooltipClass1::after {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    content: "";
+    /* Top */
+    bottom: 100%;
+    left: 50%;
+    border-top-color: #808080;
+    border-bottom-width: 0;
+    transform: translateX(-50%);
+  }
+  .tooltipClass1:hover::before,
+  .tooltipClass1:hover::after {
+    display: inline-block;
+  }
 }
 
 /* GAME -> CARDS */
 .game-card {
-	position: relative;
+  position: relative;
 }
 .game-card img {
-	width: 100%;
-	display: block;
-	border: 2px solid #eaeaea;
+  width: 100%;
+  display: block;
+  border: 2px solid #eaeaea;
 }
 /* front of card - the picture */
 .game-card .front {
-	transform: rotateY(90deg);
-	transition: all ease-in 0.2s;
-	position: absolute;
+  transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
+  position: absolute;
 }
 .flipped .front {
-	transform: rotateY(0deg);
-	transition-delay: 0.2s;
+  transform: rotateY(0deg);
+  transition-delay: 0.2s;
 }
 /* back of card - cover */
 .game-card .back {
-	cursor: pointer;
-	transition: all ease-in 0.2s;
-	transition-delay: 0.2s;
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
 }
 .flipped .back {
-	transform: rotateY(90deg);
-	transition-delay: 0s;
+  transform: rotateY(90deg);
+  transition-delay: 0s;
 }

@@ -10,18 +10,10 @@ import { Projects } from "../components/Projects";
 import { Contact } from "../components/Contact";
 import { useMode } from "../hooks/useMode";
 import { BackTop } from "../components/BackTop";
-// React Spring
-import { animated, useSpring } from "@react-spring/web";
 
 export default function Home() {
 	const [isClosed, setIsClosed] = useState(true);
 	const { mode } = useMode();
-
-	// React Spring
-	const props = useSpring({
-		to: { opacity: 1 },
-		from: { opacity: 0 },
-	});
 
 	const handleClose = () => {
 		setIsClosed(prevState => (prevState ? false : true));
@@ -44,24 +36,12 @@ export default function Home() {
 			{!isClosed && <NavbarPage handleClose={handleClose} />}
 			{isClosed && (
 				<>
-					<animated.div style={props}>
-						<Navbar handleClose={handleClose} />
-					</animated.div>
-					<animated.div style={props}>
-						<BackTop />
-					</animated.div>
-					<animated.div style={props}>
-						<Presentation />
-					</animated.div>
-					<animated.div style={props}>
-						<Projects />
-					</animated.div>
-					<animated.div style={props}>
-						<Break />
-					</animated.div>
-					<animated.div style={props}>
-						<Contact />
-					</animated.div>
+					<Navbar handleClose={handleClose} />
+					<BackTop />
+					<Presentation />
+					<Projects />
+					<Break />
+					<Contact />
 				</>
 			)}
 		</div>

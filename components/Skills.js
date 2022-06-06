@@ -1,100 +1,85 @@
 // React & Next
-import React, { useEffect } from 'react';
-import Image from 'next/image';
+import React, { useEffect } from "react";
+import Image from "next/image";
 // Libraries
-import KUTE from 'kute.js';
-import VanillaTilt from 'vanilla-tilt';
+import KUTE from "kute.js";
 // Hooks
-import { useMode } from '../hooks/useMode';
+import { useMode } from "../hooks/useMode";
 // Techs
-import JavaScriptIcon from '../public/Presentation/Techs/JavaScript.svg';
-import ReactIcon from '../public/Presentation/Techs/React.svg';
-import ReduxIcon from '../public/Presentation/Techs/Redux.svg';
+import GithubIcon from "../public/Presentation/Links/Github.svg";
+import LinkedinIcon from "../public/Presentation/Links/Linkedin.svg";
+import ResumeIcon from "../public/Presentation/Links/Resume.svg";
 // Waves
-import topLayeredWaves from '../public/Presentation/Waves/top-layered-waves.svg';
-import bottomLayeredWaves from '../public/Presentation/Waves/bottom-layered-waves.svg';
-import topDarkLayeredWaves from '../public/Presentation/Waves/top-dark-layered-waves.svg';
-import bottomDarkLayeredWaves from '../public/Presentation/Waves/bottom-dark-layered-waves.svg';
+import topLayeredWaves from "../public/Presentation/Waves/top-layered-waves.svg";
+import bottomLayeredWaves from "../public/Presentation/Waves/bottom-layered-waves.svg";
+import topDarkLayeredWaves from "../public/Presentation/Waves/top-dark-layered-waves.svg";
+import bottomDarkLayeredWaves from "../public/Presentation/Waves/bottom-dark-layered-waves.svg";
 // Tablet Waves
-import tabletTopLayeredWaves from '../public/Presentation/Waves/tablet-top-layered-waves.svg';
-import tabletBottomLayeredWaves from '../public/Presentation/Waves/tablet-bottom-layered-waves.svg';
-import tabletTopDarkLayeredWaves from '../public/Presentation/Waves/tablet-top-dark-layered-waves.svg';
-import tabletBottomDarkLayeredWaves from '../public/Presentation/Waves/tablet-bottom-dark-layered-waves.svg';
+import tabletTopLayeredWaves from "../public/Presentation/Waves/tablet-top-layered-waves.svg";
+import tabletBottomLayeredWaves from "../public/Presentation/Waves/tablet-bottom-layered-waves.svg";
+import tabletTopDarkLayeredWaves from "../public/Presentation/Waves/tablet-top-dark-layered-waves.svg";
+import tabletBottomDarkLayeredWaves from "../public/Presentation/Waves/tablet-bottom-dark-layered-waves.svg";
 // Desktop Waves
-import desktopTopLayeredWaves from '../public/Presentation/Waves/desktop-top-layered-waves.svg';
-import desktopBottomLayeredWaves from '../public/Presentation/Waves/desktop-bottom-layered-waves.svg';
-import desktopTopDarkLayeredWaves from '../public/Presentation/Waves/desktop-top-dark-layered-waves.svg';
-import desktopBottomDarkLayeredWaves from '../public/Presentation/Waves/desktop-bottom-dark-layered-waves.svg';
+import desktopTopLayeredWaves from "../public/Presentation/Waves/desktop-top-layered-waves.svg";
+import desktopBottomLayeredWaves from "../public/Presentation/Waves/desktop-bottom-layered-waves.svg";
+import desktopTopDarkLayeredWaves from "../public/Presentation/Waves/desktop-top-dark-layered-waves.svg";
+import desktopBottomDarkLayeredWaves from "../public/Presentation/Waves/desktop-bottom-dark-layered-waves.svg";
 // Blob Techs
-import SassTech from '../public/Presentation/BlobTechs/Sass.svg';
-import FirebaseTech from '../public/Presentation/BlobTechs/Firebase.svg';
-import TailwindTech from '../public/Presentation/BlobTechs/TailwindCSS.svg';
-import ReactTech from '../public/Presentation/BlobTechs/React.svg';
-import JavaScriptTech from '../public/Presentation/BlobTechs/Javascript.svg';
-import ReduxTech from '../public/Presentation/BlobTechs/Redux.svg';
-import NextTech from '../public/Presentation/BlobTechs/Next.svg';
-import FigmaTech from '../public/Presentation/BlobTechs/Figma.svg';
-import GitTech from '../public/Presentation/BlobTechs/Git.svg';
-// Links
-import GithubLink from '../public/Presentation/Links/Github.svg';
-import LinkedinLink from '../public/Presentation/Links/Linkedin.svg';
-import ResumeLink from '../public/Presentation/Links/Resume.svg';
+import HTMLTech from "../public/Presentation/BlobTechs/HTML.svg";
+import CSSTech from "../public/Presentation/BlobTechs/CSS.svg";
+import SassTech from "../public/Presentation/BlobTechs/Sass.svg";
+import FirebaseTech from "../public/Presentation/BlobTechs/Firebase.svg";
+import TailwindTech from "../public/Presentation/BlobTechs/TailwindCSS.svg";
+import ReactTech from "../public/Presentation/BlobTechs/React.svg";
+import JavaScriptTech from "../public/Presentation/BlobTechs/Javascript.svg";
+import ReduxTech from "../public/Presentation/BlobTechs/Redux.svg";
+import NextTech from "../public/Presentation/BlobTechs/Next.svg";
+import FigmaTech from "../public/Presentation/BlobTechs/Figma.svg";
+import GitTech from "../public/Presentation/BlobTechs/Git.svg";
+// Framer Motion
+import { motion } from "framer-motion";
 
 const icons = [
-  { id: 0, src: JavaScriptIcon },
-  { id: 1, src: ReactIcon },
-  { id: 2, src: ReduxIcon }
+  {
+    id: 0,
+    src: LinkedinIcon,
+    link: "https://www.linkedin.com/in/danteexposito/"
+  },
+  { id: 1, src: GithubIcon, link: "https://github.com/danteexpo" },
+  {
+    id: 2,
+    src: ResumeIcon,
+    link: "https://drive.google.com/file/d/1inD9qtkd1Awv4FsXX7YA8vb2lqUBBHnX/view?usp=sharing"
+  }
 ];
 
 const techs = [
-  { id: 0, src: SassTech, name: 'Sass', link: 'https://sass-lang.com/' },
-  { id: 1, src: FigmaTech, name: 'Figma', link: 'https://www.figma.com/' },
+  { id: 0, src: HTMLTech, name: "HTML", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+  { id: 1, src: CSSTech, name: "CSS", link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
   {
     id: 2,
-    src: TailwindTech,
-    name: 'Tailwind',
-    link: 'https://tailwindcss.com/'
-  },
-  { id: 3, src: ReactTech, name: 'React', link: 'https://reactjs.org/' },
-  {
-    id: 4,
     src: JavaScriptTech,
-    name: 'JavaScript',
-    link: 'https://www.javascript.com/'
+    name: "JavaScript",
+    link: "https://www.javascript.com/"
   },
-  { id: 5, src: ReduxTech, name: 'Redux', link: 'https://redux.js.org/' },
+  { id: 3, src: SassTech, name: "Sass", link: "https://sass-lang.com/" },
+  { id: 4, src: FigmaTech, name: "Figma", link: "https://www.figma.com/" },
   {
-    id: 6,
+    id: 5,
+    src: TailwindTech,
+    name: "TailwindCSS",
+    link: "https://tailwindcss.com/"
+  },
+  { id: 6, src: ReactTech, name: "React", link: "https://reactjs.org/" },
+  { id: 7, src: ReduxTech, name: "Redux", link: "https://redux.js.org/" },
+  { id: 8, src: NextTech, name: "Next.js", link: "https://nextjs.org/" },
+  {
+    id: 9,
     src: FirebaseTech,
-    name: 'Firebase',
-    link: 'https://firebase.google.com/'
+    name: "Firebase",
+    link: "https://firebase.google.com/"
   },
-  { id: 7, src: NextTech, name: 'Next.js', link: 'https://nextjs.org/' },
-  { id: 8, src: GitTech, name: 'Git', link: 'https://git-scm.com/' }
-];
-
-const linkSquares = [
-  {
-    id: 0,
-    src: GithubLink,
-    name: 'GitHub',
-    bg: 'bg-true-black',
-    link: 'https://github.com/danteexpo'
-  },
-  {
-    id: 1,
-    src: LinkedinLink,
-    name: 'LinkedIn',
-    bg: 'bg-linkedin-blue',
-    link: 'https://www.linkedin.com/in/danteexposito/'
-  },
-  {
-    id: 2,
-    src: ResumeLink,
-    name: 'Resume',
-    bg: 'bg-resume-red',
-    link: 'https://drive.google.com/file/d/1inD9qtkd1Awv4FsXX7YA8vb2lqUBBHnX/view?usp=sharing'
-  }
+  { id: 10, src: GitTech, name: "Git", link: "https://git-scm.com/" }
 ];
 
 export const Skills = () => {
@@ -102,20 +87,16 @@ export const Skills = () => {
 
   useEffect(() => {
     KUTE.fromTo(
-      '#blob1',
-      { path: '#blob1' },
-      { path: '#blob2' },
+      "#blob1",
+      { path: "#blob1" },
+      { path: "#blob2" },
       { repeat: 999, duration: 2000, yoyo: true }
     ).start();
-    VanillaTilt.init(document.querySelectorAll('.square-box'), {
-      max: 25,
-      speed: 400
-    });
   }, []);
 
   return (
     <section id="skills" className="mt-16">
-      {mode === 'light' && (
+      {mode === "light" && (
         <>
           <span className="sm:hidden">
             <Image src={topLayeredWaves} alt="" layout="responsive" />
@@ -128,7 +109,7 @@ export const Skills = () => {
           </span>
         </>
       )}
-      {mode === 'dark' && (
+      {mode === "dark" && (
         <>
           <span className="sm:hidden">
             <Image src={topDarkLayeredWaves} alt="" layout="responsive" />
@@ -145,16 +126,21 @@ export const Skills = () => {
           </span>
         </>
       )}
+
       <div className="relative -top-1 text-center bg-main-black text-main-white sm:py-3 md:py-6">
         <div className="max-w-3xl mx-auto">
           <div className="pt-4 pb-2 mx-auto w-32 flex justify-between items-center sm:hidden">
             {icons.map(icon => (
-              <span
+              <a
                 key={icon.id}
-                className="grid place-items-center relative w-8 h-8"
+                href={icon.link}
+                target="_blank"
+                rel="noreferrer"
               >
-                <Image src={icon.src} alt="" layout="fill" />
-              </span>
+                <span className="grid place-items-center relative w-8 h-8">
+                  <Image src={icon.src} alt="" layout="fill" />
+                </span>
+              </a>
             ))}
           </div>
           <h2 className="font-bold text-2xl sm:hidden">
@@ -164,16 +150,17 @@ export const Skills = () => {
             A self-taught front-end web developer, who loves to design and build
             web applications.
           </p>
-          <div className="pt-8 flex flex-col justify-center items-center sm:flex-row sm:px-4 sm:justify-between sm:pt-0 md:px-0">
-            <div className="flex flex-col justify-center items-center sm:flex-row">
+          <div className="pt-8 pb-8 flex flex-col justify-center items-center sm:px-4 sm:pt-0 md:px-0">
+            <div className="flex flex-col justify-center items-center">
               <h2
                 data-title="Skills"
-                className="relative w-min font-bold text-2xl text-transparent text-transparent-dark before:content-[attr(data-title)] before:absolute before:bottom-[3px] before:text-main-white sm:rotate-[270deg] sm:text-4xl"
+                className="relative w-min font-bold text-2xl my-4 text-transparent text-transparent-dark before:content-[attr(data-title)] before:absolute before:bottom-[3px] before:text-main-white sm:text-3xl md:text-4xl"
               >
                 Skills
               </h2>
+
               {/* BLOB ANIMATION */}
-              <div className="absolute translate-y-8 -translate-x-4 sm:hidden">
+              <div className="absolute translate-y-12 -translate-x-2 sm:hidden">
                 <svg
                   id="visual"
                   viewBox="0 0 540 960"
@@ -191,7 +178,7 @@ export const Skills = () => {
                   </g>
                   <g
                     transform="translate(236.81854344419713 496.0499895737718)"
-                    style={{ visibility: 'hidden' }}
+                    style={{ visibility: "hidden" }}
                   >
                     <path
                       id="blob2"
@@ -201,55 +188,35 @@ export const Skills = () => {
                   </g>
                 </svg>
               </div>
+
               {/* BLOB SKILLS */}
-              <div className="py-4 grid place-items-center gap-8 grid-cols-3 sm:gap-14 md:gap-x-28 sm:mr-auto">
+              <div className="pt-6 pb-2 grid place-items-center gap-6 grid-cols-6 sm:grid-cols-8 md:grid-cols-12 sm:gap-8">
                 {techs.map(tech => (
-                  <a
-                    key={tech.id}
-                    href={tech.link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <span
-                      data-tooltip={tech.name}
-                      className={`grid place-items-center relative w-10 h-10 cursor-pointer sm:w-12 sm:h-12 sm:opacity-80 sm:hover:opacity-100 tooltipClass`}
+                  <div key={tech.id} className={`flex flex-col justify-center items-center gap-2 col-span-2 ${tech.id === 9 ? "col-start-2 sm:col-start-4 md:col-start-8" : ""} ${tech.id === 8 ? "sm:col-start-2 md:col-start-6" : ""} ${tech.id === 6 ? "md:col-start-2" : ""}`}>
+                    <motion.a
+                      href={tech.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      whileHover={{
+                        scale: 1.2,
+                        transition: { duration: 0.2 }
+                      }}
                     >
-                      <Image src={tech.src} alt={tech.name} layout="fill" />
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div className="pt-8 flex flex-col justify-center items-center sm:pt-0 sm:flex-row">
-              <h2
-                data-title="Links"
-                className="relative w-min font-bold text-2xl text-transparent text-transparent-dark before:content-[attr(data-title)] before:absolute before:bottom-[3px] before:text-main-white sm:rotate-[270deg] sm:text-4xl"
-              >
-                Links
-              </h2>
-              {/* LINK SQUARES */}
-              <div className="py-4 grid place-items-center gap-4 grid-cols-3 sm:grid-cols-1 sm:py-0">
-                {linkSquares.map(square => (
-                  <a
-                    href={square.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    key={square.id}
-                    className={`flex flex-col justify-between items-center py-1 ${square.bg} w-20 h-20 cursor-pointer square-box`}
-                  >
-                    <span className="grid place-items-center relative top-0 w-12 h-12">
-                      <Image src={square.src} alt={square.name} layout="fill" />
-                    </span>
-                    <p className="text-sm font-light">{square.name}</p>
-                  </a>
+                      <span className={`grid place-items-center relative w-10 h-10 cursor-pointer sm:w-12 sm:h-12`}>
+                        <Image src={tech.src} alt={tech.name} layout="fill" />
+                      </span>
+                    </motion.a>
+                    <p className="hidden sm:block font-light">{tech.name}</p>
+                  </div>
                 ))}
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <span className="relative -top-3">
-        {mode === 'light' && (
+        {mode === "light" && (
           <>
             <span className="sm:hidden">
               <Image src={bottomLayeredWaves} alt="" layout="responsive" />
@@ -270,7 +237,7 @@ export const Skills = () => {
             </span>
           </>
         )}
-        {mode === 'dark' && (
+        {mode === "dark" && (
           <>
             <span className="sm:hidden">
               <Image src={bottomDarkLayeredWaves} alt="" layout="responsive" />
