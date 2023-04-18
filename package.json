@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@formspree/react": "^2.2.5",
     "framer-motion": "^6.3.10",
     "kute.js": "^2.2.2",
     "next": "12.1.6",

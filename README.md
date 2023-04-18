@@ -1,6 +1,6 @@
 # My Portfolio
 
-Project made with Next.js, React, Kute.js, Formspree & TailwindCSS.
+Project made with Next.js, React, Framer Motion & TailwindCSS.
 
 ## Link
 

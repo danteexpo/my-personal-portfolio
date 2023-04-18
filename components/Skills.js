@@ -1,5 +1,5 @@
 // React & Next
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 // Libraries
 import KUTE from "kute.js";
@@ -32,7 +32,7 @@ import FirebaseTech from "../public/Presentation/BlobTechs/Firebase.svg";
 import TailwindTech from "../public/Presentation/BlobTechs/TailwindCSS.svg";
 import ReactTech from "../public/Presentation/BlobTechs/React.svg";
 import JavaScriptTech from "../public/Presentation/BlobTechs/Javascript.svg";
-import ReduxTech from "../public/Presentation/BlobTechs/Redux.svg";
+import MotionTech from "../public/Presentation/BlobTechs/Motion.svg";
 import NextTech from "../public/Presentation/BlobTechs/Next.svg";
 import FigmaTech from "../public/Presentation/BlobTechs/Figma.svg";
 import GitTech from "../public/Presentation/BlobTechs/Git.svg";
@@ -62,28 +62,29 @@ const techs = [
     name: "JavaScript",
     link: "https://www.javascript.com/"
   },
-  { id: 3, src: SassTech, name: "Sass", link: "https://sass-lang.com/" },
-  { id: 4, src: FigmaTech, name: "Figma", link: "https://www.figma.com/" },
+  { id: 3, src: ReactTech, name: "React", link: "https://reactjs.org/" },
+  { id: 4, src: NextTech, name: "Next.js", link: "https://nextjs.org/" },
   {
     id: 5,
     src: TailwindTech,
     name: "TailwindCSS",
     link: "https://tailwindcss.com/"
   },
-  { id: 6, src: ReactTech, name: "React", link: "https://reactjs.org/" },
-  { id: 7, src: ReduxTech, name: "Redux", link: "https://redux.js.org/" },
-  { id: 8, src: NextTech, name: "Next.js", link: "https://nextjs.org/" },
+  { id: 6, src: SassTech, name: "Sass", link: "https://sass-lang.com/" },
+  { id: 7, src: MotionTech, name: "Motion", link: "https://www.framer.com/motion/" },
   {
-    id: 9,
+    id: 8,
     src: FirebaseTech,
     name: "Firebase",
     link: "https://firebase.google.com/"
   },
-  { id: 10, src: GitTech, name: "Git", link: "https://git-scm.com/" }
+  { id: 9, src: GitTech, name: "Git", link: "https://git-scm.com/" },
+  { id: 10, src: FigmaTech, name: "Figma", link: "https://www.figma.com/" },
 ];
 
 export const Skills = () => {
   const { mode } = useMode();
+  const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
     KUTE.fromTo(
@@ -94,8 +95,13 @@ export const Skills = () => {
     ).start();
   }, []);
 
+  useEffect(() => {
+    setOpacity(0);
+    setTimeout(() => setOpacity(100), 300);
+  }, [mode]);
+
   return (
-    <section id="skills" className="mt-16">
+    <section id="skills" className={`${opacity === 0 ? "opacity-0" : "opacity-100"} mt-16 transition-opacity duration-100`}>
       {mode === "light" && (
         <>
           <span className="sm:hidden">

@@ -1,8 +1,6 @@
 // React & Next
 import React, { useState } from "react";
 import Image from "next/image";
-// Formspree
-import { useForm, ValidationError } from "@formspree/react";
 // Components
 import { Footer } from "./Footer";
 // Hooks
@@ -17,7 +15,7 @@ import { motion } from "framer-motion";
 export const Contact = () => {
   const { mode } = useMode();
   const [isActive, setIsActive] = useState(false);
-  const [state, handleSubmit] = useForm("mnqwlger");
+  const [succeeded, setSucceeded] = useState(false);
 
   const handleStyle = () => {
     setIsActive(prevState => (prevState ? false : true));
@@ -41,7 +39,8 @@ export const Contact = () => {
 
       <div className="relative -top-3 mx-auto max-w-sm rounded-t-2xl dark:border-t-2 dark:border-main-white bg-main-black sm:flex sm:justify-between sm:items-center sm:max-w-xl sm:mx-0 sm:ml-auto sm:rounded-none sm:rounded-l-2xl sm:dark:border-l-2 sm:dark:border-b-2">
         <form
-          onSubmit={handleSubmit}
+          action="https://formsubmit.co/dante0im@gmail.com" 
+          method="POST"
           className="pt-8 pb-4 flex flex-col gap-4 w-[80%] max-w-sm mx-auto text-main-black font-light sm:pb-8 sm:mx-0 sm:ml-8"
         >
           <div className="flex justify-between items-center">
@@ -74,7 +73,6 @@ export const Contact = () => {
               className="bg-main-white p-2 font-light outline-none rounded-full px-4"
               required
             />
-            <ValidationError prefix="Name" field="name" errors={state.errors} />
           </span>
 
           <span className="flex flex-col">
@@ -87,11 +85,6 @@ export const Contact = () => {
               type="email"
               className="bg-main-white p-2 font-light outline-none rounded-full px-4"
               required
-            />
-            <ValidationError
-              prefix="Email"
-              field="email"
-              errors={state.errors}
             />
           </span>
 
@@ -106,19 +99,14 @@ export const Contact = () => {
               placeholder="Type your message here..."
               required
             ></textarea>
-            <ValidationError
-              prefix="Message"
-              field="message"
-              errors={state.errors}
-            />
           </span>
 
-          {!state.succeeded && (
+          {!succeeded && (
             <button className="flex justify-center items-center bg-transparent rounded-full border-2 border-main-white text-main-white hover:bg-main-white hover:text-main-black">
               Send
             </button>
           )}
-          {state.succeeded && (
+          {succeeded && (
             <button className="flex justify-center items-center bg-transparent rounded-full border-2 text-main-white border-[#4BB543] bg-[#4BB543]">
               Thanks!!!
             </button>

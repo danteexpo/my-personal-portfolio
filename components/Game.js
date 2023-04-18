@@ -6,7 +6,7 @@ import { Card } from "./Card";
 const images = [
   { src: "https://i.imgur.com/lF4xRMH.png", matched: false },
   { src: "https://i.imgur.com/RSQuQbW.png", matched: false },
-  { src: "https://i.imgur.com/JDLOfmn.png", matched: false },
+  { src: "https://i.imgur.com/Kh36Chv.png", matched: false },
   { src: "https://i.imgur.com/HQke0I9.png", matched: false },
   { src: "https://i.imgur.com/fzSDTfe.png", matched: false },
   { src: "https://i.imgur.com/352v8ZO.png", matched: false }
