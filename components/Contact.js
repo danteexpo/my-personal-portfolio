@@ -39,7 +39,7 @@ export const Contact = () => {
 
       <div className="relative -top-3 mx-auto max-w-sm rounded-t-2xl dark:border-t-2 dark:border-main-white bg-main-black sm:flex sm:justify-between sm:items-center sm:max-w-xl sm:mx-0 sm:ml-auto sm:rounded-none sm:rounded-l-2xl sm:dark:border-l-2 sm:dark:border-b-2">
         <form
-          action="https://formsubmit.co/el/silozi" 
+          action="https://formsubmit.co/dante0im@gmail.com" 
           method="POST"
           className="pt-8 pb-4 flex flex-col gap-4 w-[80%] max-w-sm mx-auto text-main-black font-light sm:pb-8 sm:mx-0 sm:ml-8"
         >
