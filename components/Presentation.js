@@ -1,42 +1,42 @@
 // React & Next
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 // Components
-import { Skills } from "./Skills";
+import { Skills } from './Skills';
 // Hooks
-import { useMode } from "../hooks/useMode";
+import { useMode } from '../hooks/useMode';
 // Images
-import myPicture from "../public/Presentation/picture.svg";
+import myPicture from '../public/Presentation/picture.svg';
 // Icons
-import GithubIconLight from "../public/Presentation/Icons/Github-light.svg";
-import GithubIconDark from "../public/Presentation/Icons/Github-dark.svg";
-import LinkedinIcon from "../public/Presentation/Icons/Linkedin-icon.svg";
-import ResumeIcon from "../public/Presentation/Icons/Resume-icon.svg";
+import GithubIconLight from '../public/Presentation/Icons/Github-light.svg';
+import GithubIconDark from '../public/Presentation/Icons/Github-dark.svg';
+import LinkedinIcon from '../public/Presentation/Icons/Linkedin-icon.svg';
+import ResumeIcon from '../public/Presentation/Icons/Resume-icon.svg';
 // Framer Motion
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const icons = [
   {
     id: 0,
-    name: "LinkedIn",
+    name: 'LinkedIn',
     src: LinkedinIcon,
     altSrc: LinkedinIcon,
-    link: "https://www.linkedin.com/in/danteexposito/"
+    link: 'https://www.linkedin.com/in/danteexposito/',
   },
   {
     id: 1,
-    name: "GitHub",
+    name: 'GitHub',
     src: GithubIconLight,
     altSrc: GithubIconDark,
-    link: "https://github.com/danteexpo"
+    link: 'https://github.com/danteexpo',
   },
   {
     id: 2,
-    name: "Resume/CV",
+    name: 'Resume/CV',
     src: ResumeIcon,
     altSrc: ResumeIcon,
-    link: "https://docs.google.com/document/d/13WfY4hwWSzz77P_BCD2dDJVlw44ESNJqeyRvQTkcKvc/edit?usp=sharing"
-  }
+    link: 'https://docs.google.com/document/d/13WfY4hwWSzz77P_BCD2dDJVlw44ESNJqeyRvQTkcKvc/edit?usp=sharing',
+  },
 ];
 
 export const Presentation = () => {
@@ -54,7 +54,7 @@ export const Presentation = () => {
             web applications.
           </p>
           <div className="w-32 flex justify-between items-center">
-            {icons.map(icon => (
+            {icons.map((icon) => (
               <motion.a
                 key={icon.id}
                 href={icon.link}
@@ -62,7 +62,7 @@ export const Presentation = () => {
                 rel="noreferrer"
                 whileHover={{
                   scale: 1.2,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
               >
                 <span
@@ -70,7 +70,7 @@ export const Presentation = () => {
                   className="grid place-items-center relative w-8 h-8 tooltipClass"
                 >
                   <Image
-                    src={mode === "light" ? icon.src : icon.altSrc}
+                    src={mode === 'light' ? icon.src : icon.altSrc}
                     alt=""
                     layout="fill"
                   />

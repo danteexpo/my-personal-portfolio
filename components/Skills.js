@@ -1,85 +1,100 @@
 // React & Next
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 // Libraries
-import KUTE from "kute.js";
+import KUTE from 'kute.js';
 // Hooks
-import { useMode } from "../hooks/useMode";
+import { useMode } from '../hooks/useMode';
 // Techs
-import GithubIcon from "../public/Presentation/Links/Github.svg";
-import LinkedinIcon from "../public/Presentation/Links/Linkedin.svg";
-import ResumeIcon from "../public/Presentation/Links/Resume.svg";
+import GithubIcon from '../public/Presentation/Links/Github.svg';
+import LinkedinIcon from '../public/Presentation/Links/Linkedin.svg';
+import ResumeIcon from '../public/Presentation/Links/Resume.svg';
 // Waves
-import topLayeredWaves from "../public/Presentation/Waves/top-layered-waves.svg";
-import bottomLayeredWaves from "../public/Presentation/Waves/bottom-layered-waves.svg";
-import topDarkLayeredWaves from "../public/Presentation/Waves/top-dark-layered-waves.svg";
-import bottomDarkLayeredWaves from "../public/Presentation/Waves/bottom-dark-layered-waves.svg";
+import topLayeredWaves from '../public/Presentation/Waves/top-layered-waves.svg';
+import bottomLayeredWaves from '../public/Presentation/Waves/bottom-layered-waves.svg';
+import topDarkLayeredWaves from '../public/Presentation/Waves/top-dark-layered-waves.svg';
+import bottomDarkLayeredWaves from '../public/Presentation/Waves/bottom-dark-layered-waves.svg';
 // Tablet Waves
-import tabletTopLayeredWaves from "../public/Presentation/Waves/tablet-top-layered-waves.svg";
-import tabletBottomLayeredWaves from "../public/Presentation/Waves/tablet-bottom-layered-waves.svg";
-import tabletTopDarkLayeredWaves from "../public/Presentation/Waves/tablet-top-dark-layered-waves.svg";
-import tabletBottomDarkLayeredWaves from "../public/Presentation/Waves/tablet-bottom-dark-layered-waves.svg";
+import tabletTopLayeredWaves from '../public/Presentation/Waves/tablet-top-layered-waves.svg';
+import tabletBottomLayeredWaves from '../public/Presentation/Waves/tablet-bottom-layered-waves.svg';
+import tabletTopDarkLayeredWaves from '../public/Presentation/Waves/tablet-top-dark-layered-waves.svg';
+import tabletBottomDarkLayeredWaves from '../public/Presentation/Waves/tablet-bottom-dark-layered-waves.svg';
 // Desktop Waves
-import desktopTopLayeredWaves from "../public/Presentation/Waves/desktop-top-layered-waves.svg";
-import desktopBottomLayeredWaves from "../public/Presentation/Waves/desktop-bottom-layered-waves.svg";
-import desktopTopDarkLayeredWaves from "../public/Presentation/Waves/desktop-top-dark-layered-waves.svg";
-import desktopBottomDarkLayeredWaves from "../public/Presentation/Waves/desktop-bottom-dark-layered-waves.svg";
+import desktopTopLayeredWaves from '../public/Presentation/Waves/desktop-top-layered-waves.svg';
+import desktopBottomLayeredWaves from '../public/Presentation/Waves/desktop-bottom-layered-waves.svg';
+import desktopTopDarkLayeredWaves from '../public/Presentation/Waves/desktop-top-dark-layered-waves.svg';
+import desktopBottomDarkLayeredWaves from '../public/Presentation/Waves/desktop-bottom-dark-layered-waves.svg';
 // Blob Techs
-import HTMLTech from "../public/Presentation/BlobTechs/HTML.svg";
-import CSSTech from "../public/Presentation/BlobTechs/CSS.svg";
-import SassTech from "../public/Presentation/BlobTechs/Sass.svg";
-import FirebaseTech from "../public/Presentation/BlobTechs/Firebase.svg";
-import TailwindTech from "../public/Presentation/BlobTechs/TailwindCSS.svg";
-import ReactTech from "../public/Presentation/BlobTechs/React.svg";
-import JavaScriptTech from "../public/Presentation/BlobTechs/Javascript.svg";
-import MotionTech from "../public/Presentation/BlobTechs/Motion.svg";
-import NextTech from "../public/Presentation/BlobTechs/Next.svg";
-import FigmaTech from "../public/Presentation/BlobTechs/Figma.svg";
-import GitTech from "../public/Presentation/BlobTechs/Git.svg";
+import HTMLTech from '../public/Presentation/BlobTechs/HTML.svg';
+import CSSTech from '../public/Presentation/BlobTechs/CSS.svg';
+import SassTech from '../public/Presentation/BlobTechs/Sass.svg';
+import FirebaseTech from '../public/Presentation/BlobTechs/Firebase.svg';
+import TailwindTech from '../public/Presentation/BlobTechs/TailwindCSS.svg';
+import ReactTech from '../public/Presentation/BlobTechs/React.svg';
+import JavaScriptTech from '../public/Presentation/BlobTechs/Javascript.svg';
+import MotionTech from '../public/Presentation/BlobTechs/Motion.svg';
+import NextTech from '../public/Presentation/BlobTechs/Next.svg';
+import FigmaTech from '../public/Presentation/BlobTechs/Figma.svg';
+import GitTech from '../public/Presentation/BlobTechs/Git.svg';
 // Framer Motion
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const icons = [
   {
     id: 0,
     src: LinkedinIcon,
-    link: "https://www.linkedin.com/in/danteexposito/"
+    link: 'https://www.linkedin.com/in/danteexposito/',
   },
-  { id: 1, src: GithubIcon, link: "https://github.com/danteexpo" },
+  { id: 1, src: GithubIcon, link: 'https://github.com/danteexpo' },
   {
     id: 2,
     src: ResumeIcon,
-    link: "https://drive.google.com/file/d/1inD9qtkd1Awv4FsXX7YA8vb2lqUBBHnX/view?usp=sharing"
-  }
+    link: 'https://drive.google.com/file/d/1inD9qtkd1Awv4FsXX7YA8vb2lqUBBHnX/view?usp=sharing',
+  },
 ];
 
 const techs = [
-  { id: 0, src: HTMLTech, name: "HTML", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-  { id: 1, src: CSSTech, name: "CSS", link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  {
+    id: 0,
+    src: HTMLTech,
+    name: 'HTML',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+  },
+  {
+    id: 1,
+    src: CSSTech,
+    name: 'CSS',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+  },
   {
     id: 2,
     src: JavaScriptTech,
-    name: "JavaScript",
-    link: "https://www.javascript.com/"
+    name: 'JavaScript',
+    link: 'https://www.javascript.com/',
   },
-  { id: 3, src: ReactTech, name: "React", link: "https://reactjs.org/" },
-  { id: 4, src: NextTech, name: "Next.js", link: "https://nextjs.org/" },
+  { id: 3, src: ReactTech, name: 'React', link: 'https://reactjs.org/' },
+  { id: 4, src: NextTech, name: 'Next.js', link: 'https://nextjs.org/' },
   {
     id: 5,
     src: TailwindTech,
-    name: "TailwindCSS",
-    link: "https://tailwindcss.com/"
+    name: 'TailwindCSS',
+    link: 'https://tailwindcss.com/',
   },
-  { id: 6, src: SassTech, name: "Sass", link: "https://sass-lang.com/" },
-  { id: 7, src: MotionTech, name: "Motion", link: "https://www.framer.com/motion/" },
+  { id: 6, src: SassTech, name: 'Sass', link: 'https://sass-lang.com/' },
+  {
+    id: 7,
+    src: MotionTech,
+    name: 'Motion',
+    link: 'https://www.framer.com/motion/',
+  },
   {
     id: 8,
     src: FirebaseTech,
-    name: "Firebase",
-    link: "https://firebase.google.com/"
+    name: 'Firebase',
+    link: 'https://firebase.google.com/',
   },
-  { id: 9, src: GitTech, name: "Git", link: "https://git-scm.com/" },
-  { id: 10, src: FigmaTech, name: "Figma", link: "https://www.figma.com/" },
+  { id: 9, src: GitTech, name: 'Git', link: 'https://git-scm.com/' },
+  { id: 10, src: FigmaTech, name: 'Figma', link: 'https://www.figma.com/' },
 ];
 
 export const Skills = () => {
@@ -88,9 +103,9 @@ export const Skills = () => {
 
   useEffect(() => {
     KUTE.fromTo(
-      "#blob1",
-      { path: "#blob1" },
-      { path: "#blob2" },
+      '#blob1',
+      { path: '#blob1' },
+      { path: '#blob2' },
       { repeat: 999, duration: 2000, yoyo: true }
     ).start();
   }, []);
@@ -101,8 +116,13 @@ export const Skills = () => {
   }, [mode]);
 
   return (
-    <section id="skills" className={`${opacity === 0 ? "opacity-0" : "opacity-100"} mt-16 transition-opacity duration-100`}>
-      {mode === "light" && (
+    <section
+      id="skills"
+      className={`${
+        opacity === 0 ? 'opacity-0' : 'opacity-100'
+      } mt-16 transition-opacity duration-100`}
+    >
+      {mode === 'light' && (
         <>
           <span className="sm:hidden">
             <Image src={topLayeredWaves} alt="" layout="responsive" />
@@ -115,7 +135,7 @@ export const Skills = () => {
           </span>
         </>
       )}
-      {mode === "dark" && (
+      {mode === 'dark' && (
         <>
           <span className="sm:hidden">
             <Image src={topDarkLayeredWaves} alt="" layout="responsive" />
@@ -136,7 +156,7 @@ export const Skills = () => {
       <div className="relative -top-1 text-center bg-main-black text-main-white sm:py-3 md:py-6">
         <div className="max-w-3xl mx-auto">
           <div className="pt-4 pb-2 mx-auto w-32 flex justify-between items-center sm:hidden">
-            {icons.map(icon => (
+            {icons.map((icon) => (
               <a
                 key={icon.id}
                 href={icon.link}
@@ -184,7 +204,7 @@ export const Skills = () => {
                   </g>
                   <g
                     transform="translate(236.81854344419713 496.0499895737718)"
-                    style={{ visibility: "hidden" }}
+                    style={{ visibility: 'hidden' }}
                   >
                     <path
                       id="blob2"
@@ -197,18 +217,29 @@ export const Skills = () => {
 
               {/* BLOB SKILLS */}
               <div className="pt-6 pb-2 grid place-items-center gap-6 grid-cols-6 sm:grid-cols-8 md:grid-cols-12 sm:gap-8">
-                {techs.map(tech => (
-                  <div key={tech.id} className={`flex flex-col justify-center items-center gap-2 col-span-2 ${tech.id === 9 ? "col-start-2 sm:col-start-4 md:col-start-8" : ""} ${tech.id === 8 ? "sm:col-start-2 md:col-start-6" : ""} ${tech.id === 6 ? "md:col-start-2" : ""}`}>
+                {techs.map((tech) => (
+                  <div
+                    key={tech.id}
+                    className={`flex flex-col justify-center items-center gap-2 col-span-2 ${
+                      tech.id === 9
+                        ? 'col-start-2 sm:col-start-4 md:col-start-8'
+                        : ''
+                    } ${tech.id === 8 ? 'sm:col-start-2 md:col-start-6' : ''} ${
+                      tech.id === 6 ? 'md:col-start-2' : ''
+                    }`}
+                  >
                     <motion.a
                       href={tech.link}
                       target="_blank"
                       rel="noreferrer"
                       whileHover={{
                         scale: 1.2,
-                        transition: { duration: 0.2 }
+                        transition: { duration: 0.2 },
                       }}
                     >
-                      <span className={`grid place-items-center relative w-10 h-10 cursor-pointer sm:w-12 sm:h-12`}>
+                      <span
+                        className={`grid place-items-center relative w-10 h-10 cursor-pointer sm:w-12 sm:h-12`}
+                      >
                         <Image src={tech.src} alt={tech.name} layout="fill" />
                       </span>
                     </motion.a>
@@ -222,7 +253,7 @@ export const Skills = () => {
       </div>
 
       <span className="relative -top-3">
-        {mode === "light" && (
+        {mode === 'light' && (
           <>
             <span className="sm:hidden">
               <Image src={bottomLayeredWaves} alt="" layout="responsive" />
@@ -243,7 +274,7 @@ export const Skills = () => {
             </span>
           </>
         )}
-        {mode === "dark" && (
+        {mode === 'dark' && (
           <>
             <span className="sm:hidden">
               <Image src={bottomDarkLayeredWaves} alt="" layout="responsive" />

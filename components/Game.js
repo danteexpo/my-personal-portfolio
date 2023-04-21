@@ -1,15 +1,15 @@
 // React
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 // Components
-import { Card } from "./Card";
+import { Card } from './Card';
 
 const images = [
-  { src: "https://i.imgur.com/lF4xRMH.png", matched: false },
-  { src: "https://i.imgur.com/RSQuQbW.png", matched: false },
-  { src: "https://i.imgur.com/Kh36Chv.png", matched: false },
-  { src: "https://i.imgur.com/HQke0I9.png", matched: false },
-  { src: "https://i.imgur.com/fzSDTfe.png", matched: false },
-  { src: "https://i.imgur.com/352v8ZO.png", matched: false }
+  { src: 'https://i.imgur.com/lF4xRMH.png', matched: false },
+  { src: 'https://i.imgur.com/RSQuQbW.png', matched: false },
+  { src: 'https://i.imgur.com/Kh36Chv.png', matched: false },
+  { src: 'https://i.imgur.com/HQke0I9.png', matched: false },
+  { src: 'https://i.imgur.com/fzSDTfe.png', matched: false },
+  { src: 'https://i.imgur.com/352v8ZO.png', matched: false },
 ];
 
 export const Game = () => {
@@ -32,7 +32,7 @@ export const Game = () => {
   };
 
   // Handle a choice
-  const handleChoice = card => {
+  const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
@@ -41,8 +41,8 @@ export const Game = () => {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
-        setCards(prevCards => {
-          return prevCards.map(card => {
+        setCards((prevCards) => {
+          return prevCards.map((card) => {
             if (card.src === choiceOne.src) {
               return { ...card, matched: true };
             } else {
@@ -61,21 +61,21 @@ export const Game = () => {
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
-    setTurns(prevTurns => prevTurns + 1);
+    setTurns((prevTurns) => prevTurns + 1);
     setDisabled(false);
   };
 
   // Check best score
   useEffect(() => {
-    let filteredArray = cards && cards.filter(card => card.matched);
+    let filteredArray = cards && cards.filter((card) => card.matched);
     if (
       Object.entries(filteredArray).toString() ===
       Object.entries(cards).toString()
     ) {
       if (turns >= 6) {
         bestScore
-          ? setBestScore(prevState => (prevState > turns ? turns : prevState))
-          : setBestScore(prevState => prevState + turns);
+          ? setBestScore((prevState) => (prevState > turns ? turns : prevState))
+          : setBestScore((prevState) => prevState + turns);
       }
     }
   }, [cards]);
@@ -101,7 +101,7 @@ export const Game = () => {
       </header>
       <div className="w-[90%] max-w-3xl my-4 mx-auto grid grid-cols-3 gap-2 md:w-full sm:gap-4 sm:grid-cols-4">
         {cards &&
-          cards.map(card => (
+          cards.map((card) => (
             <Card
               card={card}
               key={card.id}
