@@ -49,7 +49,7 @@ const icons = [
   {
     id: 2,
     src: ResumeIcon,
-    link: 'https://drive.google.com/file/d/1inD9qtkd1Awv4FsXX7YA8vb2lqUBBHnX/view?usp=sharing',
+    link: 'https://docs.google.com/document/d/13WfY4hwWSzz77P_BCD2dDJVlw44ESNJqeyRvQTkcKvc/edit?usp=sharing',
   },
 ];
 
